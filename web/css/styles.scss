@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: content-box;
+}
+
+@mixin responsive() {
+    @media screen and (max-width: 1184px) {
+        @content;
+    }
+}
+
+body {
+    background-image: url("../img/moon.jpg");
+    background-size: cover;
+    padding: 8px 32px;
+}
+
+.container-header {
+    color: rgba($color: #fff, $alpha: 0.7);
+}
+
+.container-main {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 80vh;
+    margin: 0 auto;
+    max-width: 1440px;
+    @include responsive() {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.menu-left,
+.container-table {
+    background: rgba($color: #fff, $alpha: 0.7);
+    border-radius: 20px;
+    padding: 24px 32px;
+    @include responsive() {
+        margin: 48px;
+    }
+}
+
+.menu-left {
+    width: 320px;
+    height: 220px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.select {
+    width: 80%;
+}
+
+input[type="number"],
+select {
+    appearance: textfield;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 16px;
+    width: 80%;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid #000;
+    @include responsive() {
+        font-size: 20px;
+    }
+}
+
+label {
+    font-size: 16px;
+    transform: translateY(8px);
+    @include responsive() {
+        font-size: 18px;
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+select {
+    appearance: none;
+}
+
+input[type="submit"] {
+    border: none;
+    margin: 16px auto;
+    padding: 4px;
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #fff;
+    background-color: rgba($color: #020031, $alpha: 0.7);
+    @include responsive() {
+        font-size: 24px;
+        width: 320px;
+    }
+}
+
+th,
+td {
+    text-align: center;
+    width: 88px;
+    height: 40px;
+    @include responsive() {
+        font-size: 20px;
+        width: 116px;
+    }
+}
+
+.title-table {
+    margin: 0 auto;
+    font-size: 20px;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
